@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Innovations - Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajuste la vidéo pour qu'elle couvre la totalité de la zone définie */
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0; /* Initiallement la page est transparente */
+            transition: opacity 1s ease; /* Transition de l'opacité */
+        }
+        .header, .partner, .contact-link, .about-us { /* Ajout de .about-us */
+            opacity: 0; /* Initialement, les éléments sont transparents */
+            transition: opacity 1s ease; /* Transition de l'opacité */
+        }
+        .header.visible, .partner.visible, .contact-link.visible, .about-us.visible { /* Ajout de .about-us.visible */
+            opacity: 1; /* Lorsqu'ils ont la classe "visible", les éléments deviennent opaques */
+        }
+        .partner-image {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite alternate;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+        .contact-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <video class="video-background" autoplay muted loop>
+        <source src="Product animation _ Keyboard _ Blender 3D.mp4" type="video/mp4">
+    </video>
+
+    
+    <div class="container">
+        <div class="header"> <!-- Pas besoin d'ajouter la classe fade-in ici -->
+            <h1>Découvrez l'Art de la Frappe Personnalisée avec Nos Claviers uniques</h1>
+            <p>Plongez dans un monde où chaque touche devient une expression de votre style et de votre personnalité. Chez Infinity Innovations, nous croyons que votre espace de travail mérite d'être aussi unique que vous. C'est pourquoi nous sommes fiers de présenter notre collection de claviers entièrement personnalisables, conçus pour répondre à vos besoins individuels et inspirer votre créativité.</p>
+        </div>
+        
+        <div class="partner"> <!-- Pas besoin d'ajouter la classe fade-in ici -->
+            <h2>Partenariat</h2>
+            <img src="https://pbs.twimg.com/profile_images/1744668606997180416/zAiz52gW_400x400.jpg" alt="AzakaTV" class="partner-image">
+            <div class="partner-text">
+                <p>AzakaTV, un nom qui résonne dans les corridors numériques du streaming avec une résonance éclatante. Enraciné dans le terreau fertile de la passion du jeu et de la communication, AzakaTV s'élève comme un phare dans l'océan tumultueux du contenu en ligne.</p>
+                <!-- Continue avec tous les autres éléments que tu veux faire apparaître -->
+            </div>
+        </div>
+        
+        <div class="about-us"> <!-- Ajout de la section "Qui sommes nous ?" -->
+            <h2>Qui sommes nous ?</h2>
+            <p>Nous sommes Infinity Innovations, une équipe passionnée par l'optimisation des PC et l'innovation technologique. Notre expertise s'étend à travers différents domaines de l'informatique, nous permettant d'offrir des solutions sur mesure pour répondre aux besoins les plus exigeants.</p>
+            <p>Au cœur de notre entreprise se trouve notre engagement envers l'excellence et l'ingéniosité. Nous avons développé notre propre marque de claviers, fusionnant design ergonomique et performances de pointe pour offrir une expérience de frappe inégalée.</p>
+            <p>En tant qu'informaticiens chevronnés, nous sommes constamment à l'affût des dernières avancées technologiques. Notre équipe travaille sans relâche pour repousser les limites et offrir des produits et services qui anticipent et dépassent les attentes de nos clients.</p>
+            <p>Chez Infinity Innovations, nous croyons en la puissance de la technologie pour transformer le monde. Nous sommes plus qu'une entreprise, nous sommes des visionnaires qui façonnent l'avenir de l'informatique, un projet parmi tant d'autres dans notre quête infinie d'innovation.</p>
+        </div>
+        
+        <a href="contact.html" class="contact-link">Contactez-nous maintenant</a> <!-- Pas besoin d'ajouter la classe fade-in ici -->
+    </div>
+
+    <script>
+        // JavaScript pour détecter le chargement de la fenêtre
+        window.addEventListener('load', function() {
+            document.querySelector('.container').style.opacity = '1'; // Affiche la page
+            setTimeout(function() {
+                document.querySelector('.header').classList.add('visible');
+            }, 100); // Ajoute la classe "visible" à .header après un court délai
+            setTimeout(function() {
+                document.querySelector('.partner').classList.add('visible');
+            }, 400); // Ajoute la classe "visible" à .partner après un délai un peu plus long
+            setTimeout(function() {
+                document.querySelector('.about-us').classList.add('visible');
+            }, 700); // Ajoute la classe "visible" à .about-us après un délai encore plus long
+            setTimeout(function() {
+                document.querySelector('.contact-link').classList.add('visible');
+            }, 1000); // Ajoute la classe "visible" à .contact-link après un délai encore plus long
+        });
+    </script>
+</body>
+</html>
